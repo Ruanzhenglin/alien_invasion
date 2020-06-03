@@ -1,2 +1,5 @@
 venv/
 .idea/
+.vscode
+ai_env/
+__pycache__

@@ -6,6 +6,7 @@ import pygame
 
 from bullet import Bullet
 from alien import Alien
+import sound_effects as se 
 
 
 def check_keydown_events(event, ai_settings, screen, ship, bullets):
@@ -26,6 +27,7 @@ def fire_bullet(ai_settings, screen, ship, bullets):
     if len(bullets) < ai_settings.bullets_allowed:
         new_bullet = Bullet(ai_settings, screen, ship)
         bullets.add(new_bullet)
+        se.bullet_sound.play()
 
 
 def check_keyup_events(event, ship):
@@ -127,6 +129,7 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship,
             stats.score += ai_settings.alien_points * len(aliens)
             sb.prep_score()
         check_high_score(stats, sb)
+        se.alien_sound.play()
 
     if len(aliens) == 0:
         # Up grading if all aliens is wiped out
