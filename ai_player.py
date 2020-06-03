@@ -114,9 +114,9 @@ class AIPlayer:
             ship.moving_right = True
 
     def modify_speed(self, speed_factor):                              # 2
-        self.ai_game.ai_settings.ship_speed_factor += speed_factor
-        self.ai_game.ai_settings.bullet_speed_factor += speed_factor
-        self.ai_game.ai_settings.alien_speed_factor += speed_factor   
+        self.ai_game.ai_settings.ship_speed_factor *= speed_factor
+        self.ai_game.ai_settings.bullet_speed_factor *= speed_factor
+        self.ai_game.ai_settings.alien_speed_factor *= speed_factor   
 
      
 if __name__ == '__main__':
